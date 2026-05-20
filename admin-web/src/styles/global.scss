@@ -1,0 +1,89 @@
+@use './reset';
+@use './theme';
+
+body {
+  background-color: #0f1117;
+  color: #e4e6f0;
+}
+
+// Utility classes
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Element Plus dark overrides
+.dark {
+  --el-bg-color: #0f1117;
+  --el-bg-color-overlay: #1e2030;
+  --el-bg-color-page: #0f1117;
+  --el-text-color-primary: #e4e6f0;
+  --el-text-color-regular: #9499b3;
+  --el-border-color: rgba(255, 255, 255, 0.06);
+  --el-fill-color-blank: #1e2030;
+  --el-color-primary: #6c7aff;
+}
+
+.el-menu {
+  border-right: none !important;
+}
+
+// Custom scrollbar for the whole app
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
+}
+
+// Fade transition
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.25s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+// Slide transition
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.slide-enter-from {
+  transform: translateY(10px);
+  opacity: 0;
+}
+
+.slide-leave-to {
+  transform: translateY(-10px);
+  opacity: 0;
+}
+
+// Responsive breakpoints
+@media (max-width: 1200px) {
+  .stats-panel {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .chat-sidebar {
+    width: 240px !important;
+    min-width: 240px !important;
+  }
+}
